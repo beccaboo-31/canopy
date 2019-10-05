@@ -3,7 +3,7 @@ const eventList = document.querySelector('.events');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
-
+const addButton = document.querySelector('.add-btn');
 const eventForm=document.querySelector('#add-event-form');
 
 const setupUI = (user) => {
@@ -19,12 +19,14 @@ const setupUI = (user) => {
     });
 
     // toggle user UI elements
+    addButton.style.display='center';
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none');
   } else {
     // clear account info
     accountDetails.innerHTML = '';
     // toggle user elements
+    addButton.style.display='none';
     loggedInLinks.forEach(item => item.style.display = 'none');
     loggedOutLinks.forEach(item => item.style.display = 'block');
   }
@@ -42,14 +44,30 @@ const addevent= (e) => {
       const eventhost = eventForm['event-host'].value;
       const eventaddress = eventForm['event-address'].value;
     
-      db.collection('events').add({
-        name: eventname,
-        description: eventdesc,
-        highlights: eventhighlights,
-        schedule: eventschedule,
-        address: eventaddress,
-        host: eventhost
-      });   
+      var url="https://us1.locationiq.com/v1/search.php?key=3340ae6a77d85c&q=";
+      var lat=0.0, lon=0.0;
+      //Retreive address from the page
+      url=url+eventaddress+"&format=json";
+
+      const fetchPromise = fetch(url);
+      fetchPromise.then((response) => {  //Add the lat lng obtained from the response to the database
+        response.json().then(data => {
+          lat=data[0]["lat"];
+          lon=data[0]["lon"];
+          console.log("LAT: "+lat+"LON: "+lon);
+
+          db.collection('events').add({
+            name: eventname,
+            description: eventdesc,
+            highlights: eventhighlights,
+            schedule: eventschedule,
+            address: eventaddress,
+            host: eventhost,
+            lat: lat,
+            lon: lon
+          }); 
+        });
+      });
 
       const modal = document.querySelector('#modal-add-event');
       M.Modal.getInstance(modal).close();
@@ -63,7 +81,8 @@ const setupGuides = (data) => {
     let html = '';
     data.forEach(doc => {
       const event = doc.data();
-      const li = `
+      //Use backtick instead of quotations to generate a template string
+      const li = `       
         <li>
           <div class="row">
             <div class="col s12 m6">

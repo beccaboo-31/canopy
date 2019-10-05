@@ -1,26 +1,27 @@
-let url="https://us1.locationiq.com/v1/search.php?key=3340ae6a77d85c&q=";
-
-//Retreive address from the page
-// url=url+""+"&format=json";
-
-const fetchPromise = fetch(url);
-fetchPromise.then(response => {  //Add the lat lng obtained from the response to the database
-  console.log(response);
-});
-
-
+var obj_events=[];
 //Current location of user
-
+// console.log("POSITION CURRENT: "+position.coords);
 if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        do_something(position.coords.latitude, position.coords.longitude)
-      });
+  navigator.geolocation.getCurrentPosition(function(position) {
+      obj_events=do_something(position.coords.latitude, position.coords.longitude)
+    //   console.log(position.coords);
+    });
 }
 
-// var watchID = navigator.geolocation.watchPosition(function(position) {
-//     do_something(position.coords.latitude, position.coords.longitude);
-// });
-
+do_something=(userLat, userLon)=>{
+    var arr=[];
+    db.collection('events').get().then((snapshot) => {
+        snapshot.docs.map(doc => {
+            var d = getDistance(Number(doc.data()["lat"]),Number(doc.data()["lon"]),userLat,userLon);
+            if(d<=4000){
+                arr.push(doc);
+            }
+        })
+    });
+    return arr;
+    //console.log(doc);
+    // console.log(getDistance(userLat, userLon, 19.046128, 72.870977))
+};
 //Calculating distance between user and events
 var rad = function(x) {
   return x * Math.PI / 180;

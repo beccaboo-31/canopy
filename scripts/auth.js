@@ -1,9 +1,14 @@
 // listen for auth status changes
+
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection('events').onSnapshot(snapshot => {
-      setupGuides(snapshot.docs);
+      //console.log(snapshot.docs[4].data.name);
+      // setupGuides(snapshot.docs);
+      setupGuides(obj_events);             //Getting only those events within 4km. Called from map.js
+      // do_something(userLat,userLon);
       setupUI(user);
+      
     }, err => console.log(err.message));
   } else {
     setupUI();
