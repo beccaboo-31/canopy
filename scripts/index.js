@@ -106,7 +106,7 @@ const setupGuides = (data) => {
     });
     eventList.innerHTML = html
   } else {
-    eventList.innerHTML = '<h5 class="center-align">Login to view events</h5>';
+    eventList.innerHTML = '<h5 class="center-align">No events Nearby</h5>';
   }
   
 
