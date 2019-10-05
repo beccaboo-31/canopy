@@ -1,9 +1,14 @@
 // listen for auth status changes
+
 auth.onAuthStateChanged(user => {
   if (user) {
     db.collection('events').onSnapshot(snapshot => {
-      setupGuides(snapshot.docs);
+      //console.log(snapshot.docs[4].data.name);
+      // setupGuides(snapshot.docs);
+      setupGuides(obj_events);             //Getting only those events within 4km. Called from map.js
+      // do_something(userLat,userLon);
       setupUI(user);
+      
     }, err => console.log(err.message));
   } else {
     setupUI();
@@ -31,7 +36,7 @@ auth.onAuthStateChanged(user => {
 // signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  e.preventDefault();    //Prevents page from refreshing 
   
   // get user info
   const email = signupForm['signup-email'].value;
@@ -51,7 +56,7 @@ const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
   auth.signOut().then(()=>{
-    console.log("User logged out!")
+    console.log("User signed out");
   });
 });
 
