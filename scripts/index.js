@@ -56,6 +56,10 @@ const addevent= (e) => {
           lon=data[0]["lon"];
           console.log("LAT: "+lat+"LON: "+lon);
 
+          db.collection(eventname).add({
+            message:'Welcome to the group!'
+          });
+
           db.collection('events').add({
             name: eventname,
             description: eventdesc,
@@ -64,7 +68,8 @@ const addevent= (e) => {
             address: eventaddress,
             host: eventhost,
             lat: lat,
-            lon: lon
+            lon: lon,
+            chatroom: eventname
           }); 
         });
       });
@@ -111,6 +116,8 @@ const setupGuides = (data) => {
   
 
 };
+
+
 
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {

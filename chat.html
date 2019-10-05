@@ -1,0 +1,72 @@
+<html lang="en">
+
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Ninja</title>
+
+    <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" href="/css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+    <meta name="theme-color" content="#FFE1C4"> -->
+
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/style.css" rel="stylesheet">
+  <title>Canopy</title>
+</head>
+<body class="grey lighten-3">
+
+    <h3 id="title">El Classico</h3>
+    <ul id="chatroom-messages">
+
+    </ul>
+    <form id="message">
+        <input id="content" type="text" placeholder="Enter message">
+        <input type="submit" value="Submit">
+    </form>
+ 
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAKggXH541E8PjIUBi-O17oPe-MTEAii8k",
+          authDomain: "canopy-f89e5.firebaseapp.com",
+          databaseURL: "https://canopy-f89e5.firebaseio.com",
+          projectId: "canopy-f89e5",
+          storageBucket: "",
+          messagingSenderId: "132912662156",
+          appId: "1:132912662156:web:9d5c194c9af71f54b21da9",
+          measurementId: "G-NHY801NWFT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    
+        // update firestore settings
+        //db.settings({ timestampsInSnapshots: true });
+      </script>
+
+      <script src="scripts/chats.js"></script>
+  <!-- <script src="scripts/map.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script> -->
+</body>
+</html>

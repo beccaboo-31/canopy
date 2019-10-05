@@ -33,6 +33,25 @@ auth.onAuthStateChanged(user => {
 //   });
 // });
 
+// chatroom
+const message = document.querySelector('#message');
+const chatroom = document.querySelector('#title');
+
+db.collection(chatroom.innerHTML()).onSnapshot(snapshot => {
+  console.log("reached here");
+  //setupchats(snapshot.docs);
+}, err => console.log(err.message));
+
+message.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const msg = message['content'].value;
+  console.log('here now');
+  db.collection(chatroom.innerHTML()).add({
+    message:msg,
+    user:auth.currentUser
+  });
+});
+
 // signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {

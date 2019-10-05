@@ -13,11 +13,13 @@ do_something=(userLat, userLon)=>{
     db.collection('events').get().then((snapshot) => {
         snapshot.docs.map(doc => {
             var d = getDistance(Number(doc.data()["lat"]),Number(doc.data()["lon"]),userLat,userLon);
-            if(d<=4000){
+            console.log(d);
+            if(d<=4500){
                 arr.push(doc);
             }
         })
     });
+    console.log(arr);
     return arr;
     //console.log(doc);
     // console.log(getDistance(userLat, userLon, 19.046128, 72.870977))
