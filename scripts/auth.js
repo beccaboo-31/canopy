@@ -51,9 +51,8 @@ signupForm.addEventListener('submit', (e) => {
       interested: '',
       myEvents: ''
     });
-    
-  }).then(() => {
     // close the signup modal & reset form
+  }).then(() => {
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();

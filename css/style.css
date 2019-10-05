@@ -15,6 +15,11 @@
   }
   .page-footer{
     background-color: var(--secondary);
+    /* position: absolute; */
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    top:0;
   }
   .icon-block {
     padding: 0 15px;

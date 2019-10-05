@@ -5,6 +5,8 @@ const loggedInLinks = document.querySelectorAll('.logged-in');
 const accountDetails = document.querySelector('.account-details');
 const addButton = document.querySelector('.add-btn');
 const eventForm=document.querySelector('#add-event-form');
+const indexBanner=document.querySelector('#index-banner');
+const landingContent=document.querySelector('#landing-content');
 
 const setupUI = (user) => {
   if (user) {
@@ -22,6 +24,8 @@ const setupUI = (user) => {
     addButton.style.display='center';
     loggedInLinks.forEach(item => item.style.display = 'block');
     loggedOutLinks.forEach(item => item.style.display = 'none');
+    indexBanner.style.display='none';
+    landingContent.style.display='none';
   } else {
     // clear account info
     accountDetails.innerHTML = '';
@@ -29,6 +33,8 @@ const setupUI = (user) => {
     addButton.style.display='none';
     loggedInLinks.forEach(item => item.style.display = 'none');
     loggedOutLinks.forEach(item => item.style.display = 'block');
+    indexBanner.style.display='block';
+    landingContent.style.display='block';
   }
 };
 
@@ -94,8 +100,8 @@ const setupGuides = (data) => {
                   <p><em>${event.highlights}</em></p>
                 </div>
                 <div class="card-action">
-                  <a class="" data-target="add-wishlist">Interested</a>
-                  <a class="" data-target="add-guest">Go to Event</a>
+                  <a class="btn tooltipped" data-target="add-wishlist">Interested</a>
+                  <a class="btn tooltipped" data-target="add-guest">Go to Event</a>
                 </div>
               </div>
             </div>
@@ -106,7 +112,7 @@ const setupGuides = (data) => {
     });
     eventList.innerHTML = html
   } else {
-    eventList.innerHTML = '<h5 class="center-align">No events Nearby</h5>';
+    eventList.innerHTML = '<h5 class="center-align"></h5>';
   }
   
 
