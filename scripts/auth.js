@@ -31,7 +31,7 @@ auth.onAuthStateChanged(user => {
 // signup
 const signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  e.preventDefault();    //Prevents page from refreshing 
   
   // get user info
   const email = signupForm['signup-email'].value;
@@ -50,7 +50,9 @@ signupForm.addEventListener('submit', (e) => {
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut();
+  auth.signOut().then(()=>{
+    console.log("User signed out");
+  });
 });
 
 // login
