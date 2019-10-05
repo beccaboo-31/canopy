@@ -1,0 +1,24 @@
+:root{
+    --primary:#e0f7fa;
+    --secondary:#4dd0e1;
+    --title:#00838f ;
+  }
+  
+  .top-nav{
+    background-color: var(--secondary);
+  }
+  .top-nav a{
+    color: black;
+  }
+  .header{
+    color: var(--title);
+  }
+  .page-footer{
+    background-color: var(--secondary);
+  }
+  .icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
