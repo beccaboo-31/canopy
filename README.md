@@ -23,13 +23,25 @@ Generally people tend to watch or enjoy events with friends or other people, but
 - `Filteration` of events to avoid Spam 
 - `Gamification` rewarding users and hosts points and coupons based on tweets and popularity of the event.
 
-
 ------------------------------------------
 ### Installation
 
 ``` sh
 - git clone https://github.com/greevashah/canopy
 ```
+------------------------------------------
+### Demo
+<div align="center">
+
+<h3 > Screenshots </h3>
+<br>
+<img src ="./img/Screenshots/SS_1.png" max-width = 150px max-height = 200px><br>
+<img src ="./img/Screenshots/SS_2.png" max-width = 150px max-height = 200px><br>
+<img src ="./img/Screenshots/SS_3.png" max-width = 150px max-height = 200px><br>
+<img src ="./img/Screenshots/SS_4.png" max-width = 150px max-height = 200px><br>
+<img src ="./img/Screenshots/SS_5.png" max-width = 150px max-height = 200px><br>
+
+</div>
 ------------------------------------------
 ### Contributing
 
