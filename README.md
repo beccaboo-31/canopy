@@ -6,11 +6,8 @@
 
 ------------------------------------------
 
->
-
-
 <div align="center">
-&#10077; Be careful who you trust, the devil was once an angel. &#10078;  -  <a href ="https://github.com/shivam1708"> cheetAh </a>
+Generally people tend to watch or enjoy events with friends or other people, but mostly people end up watching a event at their place alone. Canopy provides such people a platform to communicate with close by people and also look for events around their location. Thus, it becomes one roof for all local events.
 </div>
 
 
@@ -25,25 +22,6 @@
 - `Chatroom` for each event
 - `Filteration` of events to avoid Spam 
 - `Gamification` rewarding users and hosts points and coupons based on tweets and popularity of the event.
-
-
-------------------------------------------
-### Demo
-<div align="center">
-
-<h3 > Sign-In  </h3>
-<br>
-<p align="center">
-<img src ="./extension/images/Sign-In.gif" max-width = 600px>
-</p>
-
-<h3 > Import  </h3>
-<br>
-<p align="center">
-<img src ="./extension/images/Import.gif" max-width = 600px>
-</p>
-
-</div>
 
 
 ------------------------------------------
