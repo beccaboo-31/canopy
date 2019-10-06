@@ -1,0 +1,61 @@
+:root{
+    --primary:#fff;
+    --secondary:#4dd0e1;
+    --title:#00838f ;
+  }
+  
+  .top-nav{
+    background-color: var(--secondary);
+    /* color: #e0f7fa;
+    font-family: 'Lobster', cursive; */
+  }
+  .top-nav a{
+    color: #fff;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
+  }
+  .header{
+    color: var(--title);
+  }
+  .page-footer{
+    background-color: var(--secondary);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
+  .icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
+  .chatroom {
+    height: 50%;
+    width: 50%;
+    margin: 2% 20% 2% 20%;
+    padding: 5%;
+    border-radius: 0.1em;
+  }
+  .chatroom-title{
+      background: var(--title);
+      margin: 0;
+      padding: 1rem;
+  }
+  .chatroom-messages{
+      background: var(--primary);
+      margin: 0;
+  }
+  .chatroom-submit-message{
+      background: var(--primary);
+      border: 0.1rem black;
+  }
+  .chatroom-submit-message .send{
+      background: var(--secondary);
+      border: 0.2rem black;
+      color: black;
+  }
+  .collection .collection-item.active {
+    background-color:#0097a7 !important; 
+    opacity: 0.8;
+  }
