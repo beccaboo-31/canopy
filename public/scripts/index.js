@@ -152,14 +152,14 @@ const setupGuides = (data) => {
       var eventhighlights=document.createElement('p');
         eventhighlights.textContent=doc.data().highlights;
       var delbutton=document.createElement('div');
-        delbutton.className="col s2 m3 delete-button btn tooltipped";
+        delbutton.className="col s2 m1 delete-button btn tooltipped";
       var icon=document.createElement('i');
         icon.className="material-icons";
         icon.textContent="delete";
       var row2=document.createElement('div');
         row2.className="row";
       var card3=document.createElement('div');
-        card3.className="card-action col s12 m12";
+        card3.className="card-action col s12 m6";
       var link1=document.createElement('a');
         link1.textContent="Interested";
         link1.className="btn tooltipped"
@@ -170,7 +170,7 @@ const setupGuides = (data) => {
       var row3=document.createElement('div');
         row3.className="row";
       var card4=document.createElement('div');
-        card4.className="card-action col s12 m12";
+        card4.className="card-action col s12 m6";
       var link3=document.createElement('a');
         link3.textContent="Go to Chatroom";
         link3.className="btn tooltipped"
