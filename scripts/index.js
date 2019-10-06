@@ -1,3 +1,15 @@
+if ('serviceWorker' in navigator) {
+  console.log('sw registered!!');
+  navigator.serviceWorker.register('/sw.js')
+  .then((abc) => {
+      console.log('sw here!!');
+  })
+  .catch((err) => {
+      console.log(err);
+  });
+}
+
+
 // DOM elements
 const eventList = document.querySelector('.events');
 var eventUList=document.querySelector('#event-list');
