@@ -30,14 +30,17 @@
 </head>
 <body class="grey lighten-3">
 
-    <h3 id="title"></h3>
-    <ul id="chatroom-messages">
-
-    </ul>
-    <form id="message">
-        <input id="content" type="text" placeholder="Enter message">
-        <input type="submit" value="Submit">
-    </form>
+    <div class="chatroom">
+        <h3 id="title" class="chatroom-title"></h3>
+        <ul id="chatroom-messages" class="chatroom-messages collection">
+          
+        </ul>
+        <form id="message" class="chatroom-submit-message">
+            <input id="content" type="text" placeholder="Enter message">
+            <input class="send" type="submit" value="Submit">
+        </form>
+    </div>
+    
  
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>

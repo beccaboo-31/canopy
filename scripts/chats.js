@@ -52,14 +52,29 @@ const chatroom_messages = document.querySelector('#chatroom-messages');
 
 setupchats = (data) => {
         let html = '';
+        var c=0;
+        var li=``;
         data.forEach(doc => {
+          c=c+1;
+          console.log(c%2, c%2==0);
           const event = doc.data();
+          if(c%2 === 0){
+            li = `<li class="collection-item avatar active">
+                <i class="material-icons circle">folder</i>
+                <span class="title">${event.message}</span>
+                <p>${event.user}</p>
+              </li>`;
+          }
+          else{
+            li = `<li class="collection-item avatar">
+            <i class="material-icons circle">folder</i>
+            <span class="title">${event.message}</span>
+            <p>${event.user}</p>
+          </li>`;
+          }
+          
           //Use backtick instead of quotations to generate a template string
-          const li = `       
-            <li>
-            ${event.message} <br>  ${event.user}
-            </li>
-          `;
+          
           html += li;
         });
         chatroom_messages.innerHTML = html;
