@@ -17,13 +17,13 @@
 
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#FFE1C4">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" href="/css/style.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <div class="nav-wrapper container">
       <a href="/">Canopy</a>
       <span class="right grey-text text-darken-1">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+        <i class="material-icons sidenav-trigger" data-target="side-menu" style="color: #fff">menu</i>
       </span>
 
     </div>
@@ -50,7 +50,7 @@
   <ul id="side-menu" class="sidenav side-menu">
     <li><a class="subheader">Canopy</a></li>
     <li class="logged-in" style="display: none;">
-      <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+      <a href="profile.html" class="grey-text " data-target="modal-account">Account</a>
     </li>
     <li class="logged-in" style="display: none;">
       <a href="#" class="grey-text sidenav-close" id="logout">Logout</a>
@@ -224,8 +224,9 @@
 
 
 <footer class="page-footer">
-    <div class="footer-copyright">
-        <div class="container">
+    <div class="footer-copyright" id="footer">
+        <div class="container" style="color: #fff;
+        font-family: 'Lobster', cursive; font-size: 1.5em;">
         Made by <i class="material-icons">favorite</i>
         </div>
     </div>

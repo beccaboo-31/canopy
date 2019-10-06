@@ -33,14 +33,18 @@
 </head>
 <body class="grey lighten-3">
 
-    <h3 id="title"></h3>
-    <ul id="chatroom-messages">
-
-    </ul>
-    <form id="message">
-        <input id="content" type="text" placeholder="Enter message">
-        <input type="submit" value="Submit">
-    </form>
+    <div class="chatroom">
+        <h3 id="title" class="chatroom-title " style="color: #fff"></h3>
+        <ul id="chatroom-messages" class="chatroom-messages collection">
+          
+        </ul>
+        <form id="message" class="chatroom-submit-message">
+            <input id="content" type="text" placeholder="Enter message">
+            <input class="send btn tooltipped darken-2 z-depth-0" style="background-color: var(--title); color: #fff" type="submit" value="Submit">
+            <!-- <button class="btn yellow darken-2 z-depth-0" type="submit">Add Event</button> -->
+        </form>
+    </div>
+    
  
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
