@@ -140,7 +140,7 @@ const setupGuides = (data) => {
       var eventhighlights=document.createElement('p');
         eventhighlights.textContent=doc.data().highlights;
       var delbutton=document.createElement('div');
-        delbutton.className="col s2 m1 delete-button";
+        delbutton.className="col s2 m1 delete-button btn tooltipped";
       var icon=document.createElement('i');
         icon.className="material-icons";
         icon.textContent="delete";
@@ -150,18 +150,23 @@ const setupGuides = (data) => {
         card3.className="card-action col s12 m6";
       var link1=document.createElement('a');
         link1.textContent="Interested";
+        link1.className="btn tooltipped"
       var link2=document.createElement('a');
         link2.textContent="Go to Event";
+        link2.className="btn tooltipped"
       var row3=document.createElement('div');
         row3.className="row";
       var card4=document.createElement('div');
         card4.className="card-action col s12 m6";
       var link3=document.createElement('a');
         link3.textContent="Go to Chatroom";
+        link3.className="btn tooltipped"
 
       row1.setAttribute('data-id',doc.id);
       row3.setAttribute('data-id',doc.id);
+      card3.setAttribute('data-id', doc.id);
 
+      
       li.appendChild(card1);
         card1.appendChild(card2);
           card2.appendChild(row1);
@@ -195,7 +200,7 @@ const setupGuides = (data) => {
 
       //OPEN CHATROOM
       link3.addEventListener('click',(e)=>{
-        e.stopPropagation
+        e.stopPropagation();
         console.log(e);
         console.log(e.target.parentElement.parentElement);
         let document_id=e.target.parentElement.parentElement.getAttribute('data-id');
@@ -212,7 +217,32 @@ const setupGuides = (data) => {
           }
         });
         
-      })
+      });
+
+      //INTERESTED EVENTS
+      link1.addEventListener('click', (e) =>{
+        e.stopPropagation();
+        console.log(e);
+        console.log(e.target.parentElement);
+        let event_id=e.target.parentElement.getAttribute('data-id');
+        let user=auth.currentUser.uid;
+        console.log(user);
+        console.log(event_id);
+        db.collection('events').doc(event_id).get().then(doc=>{
+          if(doc.exists){
+            var event_name=doc.data().name;
+            console.log(db.collection('users').doc(user));
+            db.collection('users').doc(user).update({
+              interested: event_name
+            });
+          }
+        });
+        // console.log(event);
+        // db.collection('users').doc(interested).add({
+        //   interested: event
+        // });
+        // console.log("Interest added");
+      });
     });
   //   eventList.innerHTML = html
   } else {
@@ -221,24 +251,10 @@ const setupGuides = (data) => {
 };
 
 
-
 // setup materialize components
 document.addEventListener('DOMContentLoaded', (e)=>{
   // console.log("dom loaded")
-  //deleteEvent();
-  var trash = document.getElementsByClassName("delete-button");
-  for (var i = 0; trash.length > i; i++) {
-    console.log(trash[i]);
-  }
-  // trash.forEach( item => {
-    // console.log("item is "+ item);
-    // item.addEventListener("click", (e)=>{
-    //   // e.stopPropagation();
-    //   // let id=e.target.parentElement.parentElement.parentElement.parentElement.getAttribute(data-id);
-    //   // db.collection('events').doc(document_id).delete();
-    //   console.log(e);
-    // });
-  // });
+  
 
 
   var modals = document.querySelectorAll('.modal');

@@ -13,6 +13,7 @@ do_something=(userLat, userLon)=>{
     db.collection('events').get().then((snapshot) => {
         snapshot.docs.map(doc => {
             var d = getDistance(Number(doc.data()["lat"]),Number(doc.data()["lon"]),userLat,userLon);
+            console.log("DISTANCE: "+d);
             if(d<=9000){
                 arr.push(doc);
             }
