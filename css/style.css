@@ -1,25 +1,28 @@
 :root{
-    --primary:#e0f7fa;
+    --primary:#fff;
     --secondary:#4dd0e1;
     --title:#00838f ;
   }
   
   .top-nav{
     background-color: var(--secondary);
+    /* color: #e0f7fa;
+    font-family: 'Lobster', cursive; */
   }
   .top-nav a{
-    color: black;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+    font-size: 2em;
   }
   .header{
     color: var(--title);
   }
   .page-footer{
     background-color: var(--secondary);
-    /* position: absolute; */
-    bottom: 0%;
+    position: fixed;
+    bottom: 0;
     left: 0;
-    right: 0;
-    top:0;
+    width: 100vw;
   }
   .icon-block {
     padding: 0 15px;
@@ -27,3 +30,16 @@
   .icon-block .material-icons {
       font-size: inherit;
   }
+
+/* 
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  } */
+  /* Profile */
+  

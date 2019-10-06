@@ -151,6 +151,7 @@ const setupGuides = (data) => {
       var link1=document.createElement('a');
         link1.textContent="Interested";
         link1.className="btn tooltipped"
+        link1.style="padding-right=20px;"
       var link2=document.createElement('a');
         link2.textContent="Go to Event";
         link2.className="btn tooltipped"
