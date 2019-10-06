@@ -31,13 +31,14 @@
 <body class="grey lighten-3">
 
     <div class="chatroom">
-        <h3 id="title" class="chatroom-title"></h3>
+        <h3 id="title" class="chatroom-title " style="color: #fff"></h3>
         <ul id="chatroom-messages" class="chatroom-messages collection">
           
         </ul>
         <form id="message" class="chatroom-submit-message">
             <input id="content" type="text" placeholder="Enter message">
-            <input class="send" type="submit" value="Submit">
+            <input class="send btn tooltipped darken-2 z-depth-0" style="background-color: var(--title); color: #fff" type="submit" value="Submit">
+            <!-- <button class="btn yellow darken-2 z-depth-0" type="submit">Add Event</button> -->
         </form>
     </div>
     
