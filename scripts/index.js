@@ -84,6 +84,10 @@ const setupGuides = (data) => {
       //             <a class="">Interested</a>
       //             <a class="">Go to Event</a>
       //             </div>
+      //             <div class="row">
+      //             <div class="card-action col s12 m6">
+      //             <a class="">Go to Chatroom</a>
+      //             </div>
       //         </div>
       //     </div>
       // </li>
@@ -119,13 +123,21 @@ const setupGuides = (data) => {
         link1.textContent="Interested";
       var link2=document.createElement('a');
         link2.textContent="Go to Event";
+      var row3=document.createElement('div');
+        row3.className="row";
+      var card4=document.createElement('div');
+        card4.className="card-action col s12 m6";
+      var link3=document.createElement('a');
+        link3.textContent="Go to Chatroom";
 
       row1.setAttribute('data-id',doc.id);
+      row3.setAttribute('data-id',doc.id);
 
       li.appendChild(card1);
         card1.appendChild(card2);
           card2.appendChild(row1);
           card2.appendChild(row2);
+          card2.appendChild(row3);
             row1.appendChild(col1);
             row1.appendChild(delbutton);
               col1.appendChild(eventname);
@@ -136,6 +148,8 @@ const setupGuides = (data) => {
             row2.appendChild(card3);
               card3.appendChild(link1);
               card3.appendChild(link2);
+            row3.appendChild(card4);
+              card4.appendChild(link3);
       if(li.firstChild.textContent !=null){
         eventUList.appendChild(li);
       }      
@@ -148,6 +162,27 @@ const setupGuides = (data) => {
         console.log(document_id);
         db.collection('events').doc(document_id).delete();
         console.log("Deleted");
+      })
+
+      //OPEN CHATROOM
+      link3.addEventListener('click',(e)=>{
+        e.stopPropagation
+        console.log(e);
+        console.log(e.target.parentElement.parentElement);
+        let document_id=e.target.parentElement.parentElement.getAttribute('data-id');
+        console.log(document_id);
+        var chatroomname="";
+        var url="";
+        db.collection('events').doc(document_id).get().then(doc =>{
+          if(doc.exists){
+            console.log(doc.data().name);
+            chatroomname=doc.data().name;
+            url = './chat.html?chatroomname=' + encodeURIComponent(chatroomname);
+            console.log(url);
+            document.location.href = url;
+          }
+        });
+        
       })
     });
   //   eventList.innerHTML = html
@@ -188,31 +223,3 @@ document.addEventListener('DOMContentLoaded', (e)=>{
   M.Sidenav.init(menus, {edge: 'right'});
 
 });
-
-function deleteEvent(){
-  // Delete Event
-  //var trash = document.getElementsByClassName("delete-button");
-  //for (var i = 0; trash.length > i; i++) {
-  //  console.log(trash[i]);
-  //}
-
-  //Array.prototype.forEach.call(trash, function(el) {
-    // Do stuff here
-  //  console.log(el);
-  //});
-
-  // console.log(trash);
-  // console.log(trash.length);
-  // for(let t of trash){
-  //   console.log(t)
-  // }
-  // for(let i=0;i<trash.length;i++){
-  //   console.log(trash);
-  //   trash[i].addEventListener("click",(e)=>{
-  //     // e.stopPropagation();
-  //     // let id=e.target.parentElement.parentElement.parentElement.parentElement.getAttribute(data-id);
-  //     // db.collection('events').doc(document_id).delete();
-  //     console.log(e);
-  //   });
-  // }
-}
