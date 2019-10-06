@@ -1,8 +1,8 @@
-<h2 align="center">Canopy</h2>
+<h1 align="center">Canopy</h1>
 
 <h3 align="center">All local small events under one roof</h3>
 
-<h5 align="center">https://canopy-f89e5.firebaseapp.com/</h5>
+<h6 align="center">https://canopy-f89e5.firebaseapp.com/</h6>
 
 ------------------------------------------
 
@@ -40,12 +40,9 @@ Generally people tend to watch or enjoy events with friends or other people, but
 <img src ="./img/Screenshots/SS_4.png" width = 150px height = 250px><br>
 <img src ="./img/Screenshots/SS_3.png" width = 150px height = 250px>
 <img src ="./img/Screenshots/SS_1.png" width = 150px height = 250px>
-
-
-
-
-
+<br><br>
 </div>
+
 ------------------------------------------
 
 ### Contributing
