@@ -6,7 +6,7 @@
 
 ------------------------------------------
 
->In the digital age, people tend to have multiple credentials on multiple platforms and to automate the process there are centralized password managers available. But with the power of `immutability` of blockchain and `decentralization`, we provide a `trustless` service to handle your credentials.
+>
 
 
 <div align="center">
@@ -52,9 +52,6 @@
 ``` sh
 - git clone https://github.com/greevashah/canopy
 ```
-- Open chrome://extensions/ on browser and turn on developer mode.
-- Under `load unpacked` add extensions folder from PassWorlds directory.
-
 ------------------------------------------
 ### Contributing
 
