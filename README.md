@@ -35,23 +35,31 @@ Generally people tend to watch or enjoy events with friends or other people, but
 
 <h3 > Screenshots </h3>
 <br>
-<img src ="./img/Screenshots/SS_1.png" max-width = 150px max-height = 200px><br>
-<img src ="./img/Screenshots/SS_2.png" max-width = 150px max-height = 200px><br>
-<img src ="./img/Screenshots/SS_3.png" max-width = 150px max-height = 200px><br>
-<img src ="./img/Screenshots/SS_4.png" max-width = 150px max-height = 200px><br>
-<img src ="./img/Screenshots/SS_5.png" max-width = 150px max-height = 200px><br>
+<img src ="./img/Screenshots/SS_5.png" width = 150px height = 250px>
+<img src ="./img/Screenshots/SS_2.png" width = 150px height = 250px>
+<img src ="./img/Screenshots/SS_4.png" width = 150px height = 250px><br>
+<img src ="./img/Screenshots/SS_3.png" width = 150px height = 250px>
+<img src ="./img/Screenshots/SS_1.png" width = 150px height = 250px>
+
+
+
+
 
 </div>
 ------------------------------------------
+
 ### Contributing
 
  We're are open to `enhancements` & `bug-fixes` :smile:  
+
+------------------------------------------
 
 ### Note
 
 - This project was done under `24 hours with minimal pre-preparation` as a part of KJSCE Hackathon 2019, K.J. Somaiya College of Engineering, Mumbai.
 
 ------------------------------------------
+
 ### Contributors
 
 - [@shivam1708](https://github.com/shivam1708)
