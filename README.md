@@ -35,11 +35,11 @@ Generally people tend to watch or enjoy events with friends or other people, but
 
 <h3 > Screenshots </h3>
 <br>
-<img src ="./img/Screenshots/SS_5.png" width = 150px height = 250px>
-<img src ="./img/Screenshots/SS_2.png" width = 150px height = 250px>
-<img src ="./img/Screenshots/SS_4.png" width = 150px height = 250px><br>
-<img src ="./img/Screenshots/SS_3.png" width = 150px height = 250px>
-<img src ="./img/Screenshots/SS_1.png" width = 150px height = 250px>
+<img src ="./images/Screenshots/SS_5.png" width = 150px height = 250px>
+<img src ="./images/Screenshots/SS_2.png" width = 150px height = 250px>
+<img src ="./images/Screenshots/SS_4.png" width = 150px height = 250px><br>
+<img src ="./images/Screenshots/SS_3.png" width = 150px height = 250px>
+<img src ="./images/Screenshots/SS_1.png" width = 150px height = 250px>
 <br><br>
 </div>
 
