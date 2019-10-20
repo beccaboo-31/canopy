@@ -43,7 +43,7 @@ self.addEventListener('install', evt => {
   );
 });
 
-// activate event  
+// activate event 
 self.addEventListener('activate', evt => {
   console.log('service worker activated');
   evt.waitUntil(
